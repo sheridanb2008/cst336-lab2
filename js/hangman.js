@@ -64,7 +64,6 @@ function updateBoard() {
 }
 
 $(".hintBtn").click(function() {
-  $("#showHint").hide();
   hintFlag = true;
   $("#hintShowBtn").hide()
   remainingGuesses-=1;
@@ -136,8 +135,10 @@ function endGame(win) {
 
   if (win) {
     $('#won').show();
+    $("#hintShowBtn").hide()
   } else {
     $('#lost').show();
+    $("#hintShowBtn").hide()
   }
 }
 $(".replayBtn").on("click", function() {
